@@ -37,17 +37,49 @@ main {
     box-shadow: 0px 10px 0px 30px rgba(0, 0, 0, 0.04);
 }
 
-main > img {
+div#image {
+    position: relative;
+}
+
+div#image > img {
     display: block;
     margin: auto;
     width: 300px;
     border-radius: .7rem;
 }
 
+div#visible:hover {
+    cursor: pointer;
+    background-color: hsla(178, 100%, 50%, 0.345);
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .7rem;
+    transition: .2s;
+}
+
+div#visible:not(:hover) > svg {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0px;
+    opacity: 0;
+}
+
 main > h1 {
     font-size: 1.5rem;
     color: var(--white);
     margin: 1.1rem 0rem;
+}
+
+main > h1:hover {
+    transition: .3s;
+    cursor: pointer;
+    color: var(--primary-cyan);
 }
 
 main > p {
@@ -92,6 +124,12 @@ hr {
 strong {
     color: var(--white);
     font-weight: normal;
+}
+
+strong:hover {
+    transition: .3s;
+    color: var(--primary-cyan);
+    cursor: pointer;
 }
 
 #avatar {
